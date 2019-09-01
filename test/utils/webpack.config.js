@@ -1,18 +1,10 @@
 const { resolve, join } = require('path');
-const sassSpritePlugin = require('../..');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const context = resolve(__dirname, '../mock-app')
 
 module.exports = {
-  context,
-
-  entry: {
-    index: join(context, 'entry.js')
-  },
-
   output: {
-    path: join(context, 'dist'),
     publicPath: '/'
   },
 
@@ -29,7 +21,6 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin({ filename: 'style.css' }),
-    new sassSpritePlugin()
+    new ExtractTextPlugin({ filename: 'style.css' })
   ]
 }

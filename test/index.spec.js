@@ -1,11 +1,29 @@
+const path = require('path');
 const { expect } = require('chai');
+const rm = require('rimraf').sync;
 const run = require('./utils/run');
+
+const distPath = path.resolve(__dirname, 'mock-app/dist');
+
+let assets;
+
+function teardown() {
+  assets = null;
+  rm(distPath);
+}
 
 describe('build an app', function () {
   before(function (done) {
-    run(done);
+    run().then(_assets => {
+      assets = _assets;
+      done();
+    });
   });
   
-  after(function () {
-  })
+  after(teardown);
+
+  it('build with expected files', function () {
+    expect(Object.keys(assets).length).to.equal(3);
+    expect(assets['style.css'].source()).to.be.a('string');
+  });
 });
