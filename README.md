@@ -77,7 +77,7 @@ module.exports = {
 |               Name                |         Type          |                     Default                     | Description                                                                                           |
 | :-------------------------------: | :-------------------: | :---------------------------------------------: | :---------------------------------------------------------------------------------------------------- |
 |          `filename`          |  `{String}`   |                   `[name].png`                   | Name of the result file. May contain [name],[hash]                                                               |
-|           `margin`            |      `{Integer}`       |                   `3`                   | Output path.                                                                                          |
+|           `margin`            |      `{Integer}`       |                   `3`                   | margin between images.                                                                                          |
 |       [`algorithm`](#algorithm)       |      `{String}`       | `binary-tree` | Organize and layout items based on various algorithms.                                              |
 
 #### `algorithm`
