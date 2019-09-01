@@ -1,0 +1,13 @@
+@import "./icons/*.png";
+
+.bg-sprite {
+  display: block;
+  background: url($icons-url) 0 0 no-repeat;
+  background-size: $icons-width, $icons-height;
+
+  &.icon-i1 {
+    width: $icons-i1-width;
+    height: $icons-i1-height;
+    background-position: -$icons-i1-x, -$icons-i2-y;
+  }
+}
