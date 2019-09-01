@@ -5,9 +5,9 @@ webpack plugin that takes sprites with Sass
 ## Getting Started
 
 ```
-  ├── icons                    # 
-  |   ├── i1.png               # ccli init: 初始化项目 
-  │   └── i2.png               # Favicon
+  ├── icons                    # 待合成的图片目录
+  |   ├── i1.png
+  │   └── i2.png
   ├── style.scss
   └── webpack.config.js
 ```
@@ -31,7 +31,6 @@ module.exports = {
 ```scss
 // 生成以文件夹命名及图片名的 $icons-url 等变量
 @import "./icons/*.png";
-
 .bg-sprite {
   display: block;
   background: url($icons-url) 0 0 no-repeat; // 合成后图片的url
