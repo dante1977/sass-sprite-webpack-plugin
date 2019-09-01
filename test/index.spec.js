@@ -24,6 +24,7 @@ describe('build an app', function () {
 
   it('build with expected files', function () {
     expect(Object.keys(assets).length).to.equal(3);
+    expect(assets['icons.png'].source()).to.be.instanceof(Buffer);
     expect(assets['style.css'].source()).to.be.a('string');
   });
 });
