@@ -20,8 +20,16 @@ Add the plugin to your `webpack` config. For example:
 const SassSpriterPlugin = require('sass-sprite-webpack-plugin');
 
 module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+    ],
+  },
   plugins: [
-    new SassSpriterPlugin('/img/[name].[hash].png')
+    new SassSpriterPlugin('/img/[name].[hash].png', 3)
   ],
 };
 ```
@@ -38,7 +46,7 @@ module.exports = {
   &.icon-i1 {
     width: $icons-i1-width; // 注入i1.png文件的宽
     height: $icons-i1-height; // 注入i1.png文件的高
-    background-position: -$icons-i1-x, -$icons-i2-y; //注入i1.png文件的x,y坐标的变量
+    background-position: -$icons-i1-x, -$icons-i1-y; //注入i1.png文件的x,y坐标的变量
   }
 }
 //============== 编译后 ==============
