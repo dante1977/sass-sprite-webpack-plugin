@@ -41,8 +41,7 @@ module.exports = {
     background-position: -$icons-i1-x, -$icons-i2-y; //注入i1.png文件的x,y坐标的变量
   }
 }
-
-// 编译后
+//============== 编译后 ==============
 .bg-sprite {
   display:block;
   background:url("/icons.png") 0 0 no-repeat;
